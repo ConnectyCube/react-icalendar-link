@@ -8,6 +8,7 @@ import {
   buildUrl,
   downloadBlob,
   isIOSSafari,
+  isIOSCordova,
   isIOSChrome
 } from "./utils";
 
@@ -53,6 +54,12 @@ export default class ICalLink extends React.Component<Props> {
     // IE
     if (this.isCrappyIE) {
       window.navigator.msSaveOrOpenBlob(blob, filename);
+      return;
+    }
+
+    // Cordova
+    if(isIOSCordova()){
+      window.location = url;
       return;
     }
 

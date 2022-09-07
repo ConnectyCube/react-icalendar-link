@@ -106,6 +106,15 @@ export function isIOSSafari(): boolean {
   return iOS && webkit && !ua.match(/CriOS/i);
 }
 
+export function isIOSCordova(): boolean{
+  const ua = window.navigator.userAgent;
+  const iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+  const webkit = !!ua.match(/WebKit/i);
+  const isCordova = !!ua.match(/cordova/i)
+
+  return iOS && webkit && isCordova && !ua.match(/CriOS/i);
+}
+
 export function isIOSChrome(): boolean {
   const ua = window.navigator.userAgent;
   const iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
