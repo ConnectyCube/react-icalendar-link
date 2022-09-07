@@ -15,7 +15,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "yarn test && rollup -c",
+    "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn build",
     "predeploy": "cd example && yarn && yarn build",

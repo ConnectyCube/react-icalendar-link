@@ -59,6 +59,7 @@ export default class ICalLink extends React.Component<Props> {
 
     // Cordova
     if(isIOSCordova()){
+      // @ts-ignore
       window.location = url;
       return;
     }
